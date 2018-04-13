@@ -12,6 +12,17 @@
 }
 ```
 
+```json
+{
+  "id": "ftp_default",
+  "type": "@runnerty-executor-ftp",
+  "host": "host.com",
+  "port": "21",
+  "user": "user",
+  "privateKey": "/privateKeys/myPrivateKey.pem"
+}
+```
+
 ### Plan sample:
 ```json
 {
@@ -29,6 +40,9 @@
   "sourcePath": "./remoteDir/"
 }
 ```
+
+### Connection:
+connection config you will see [here](https://github.com/mscdex/ssh2#user-content-client-methods)
 
 ### Commands
 * get: download a file.
