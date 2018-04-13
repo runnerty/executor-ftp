@@ -1,0 +1,68 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "title": "@runnerty-executor-ftp",
+  "definitions": {
+    "config": {
+      "type": "object",
+      "required": [
+        "id",
+        "type"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string",
+          "pattern": "@runnerty-executor-ftp"
+        },
+        "host": {
+          "type": "string"
+        },
+        "port": {
+          "type": ["number", "string"]
+        },
+        "username": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        },
+        "privateKey": {
+          "type": "string"
+        },
+        "passphrase": {
+          "type": "string"
+        },
+        "readyTimeout": {
+          "type": "number"
+        }
+      }
+    },
+    "params": {
+      "type": "object",
+      "required": [
+        "id",
+        "command"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "command": {
+          "type": "string",
+          "regexp": { "pattern": "GET|PUT|LIST|MKDIR|RMDIR|DELETE|RENAME|CHMOD|", "flags": "i" }
+        },
+        "remotePath": {
+          "type": "string"
+        },
+        "sourcePath": {
+          "type": "string"
+        },
+        "destinationPath": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}
