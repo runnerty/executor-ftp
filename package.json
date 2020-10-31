@@ -1,10 +1,14 @@
 {
   "name": "@runnerty/executor-ftp",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Runnerty module: FTP executor",
   "author": "Coderty",
   "license": "MIT",
   "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint '**/*.js' && prettier --check '**'"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/runnerty/executor-ftp.git"
@@ -20,6 +24,12 @@
   },
   "homepage": "https://github.com/runnerty/executor-ftp#readme",
   "dependencies": {
-    "ssh2-sftp-client": "^2.1.1"
+    "ssh2-sftp-client": "^5.3.1"
+  },
+  "devDependencies": {
+    "eslint": "~7.12.1",
+    "eslint-config-prettier": "^6.15.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "prettier": "^2.1.2"
   }
 }
