@@ -24,7 +24,7 @@
   },
   "homepage": "https://github.com/runnerty/executor-ftp#readme",
   "dependencies": {
-    "ssh2-sftp-client": "^5.3.1"
+    "ssh2-sftp-client": "^7.0.0"
   },
   "devDependencies": {
     "eslint": "~7.12.1",
