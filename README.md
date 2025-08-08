@@ -25,7 +25,7 @@ npm i @runnerty/executor-ftp
   "type": "@runnerty-executor-ftp",
   "host": "host.com",
   "port": "21",
-  "user": "user",
+  "username": "user",
   "password": "1234"
 }
 ```
@@ -36,10 +36,14 @@ npm i @runnerty/executor-ftp
   "type": "@runnerty-executor-ftp",
   "host": "host.com",
   "port": "21",
-  "user": "user",
-  "privateKey": "/privateKeys/myPrivateKey.pem"
+  "username": "user",
+  "privateKeyPath": "/privateKeys/myPrivateKey.pem"
 }
 ```
+
+Notas:
+- Puedes usar `username` o `user` en la configuración; internamente se normaliza a `username`.
+- Si usas autenticación por clave, utiliza `privateKeyPath` (ruta a fichero PEM) o `privateKey` (contenido PEM). Si `privateKey` apunta a un fichero existente, se leerá automáticamente.
 
 ### Plan sample:
 ```json

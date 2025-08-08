@@ -13,11 +13,20 @@
           "type": "string",
           "pattern": "@runnerty-executor-ftp"
         },
+        "protocol": {
+          "type": "string",
+          "enum": ["sftp"],
+          "default": "sftp"
+        },
         "host": {
           "type": "string"
         },
         "port": {
           "type": ["number", "string"]
+        },
+        "user": {
+          "type": "string",
+          "description": "Alias de username, se normaliza internamente"
         },
         "username": {
           "type": "string"
@@ -27,6 +36,10 @@
         },
         "privateKey": {
           "type": "string"
+        },
+        "privateKeyPath": {
+          "type": "string",
+          "description": "Ruta a la clave privada en formato PEM"
         },
         "passphrase": {
           "type": "string"
@@ -45,7 +58,7 @@
         },
         "command": {
           "type": "string",
-          "regexp": { "pattern": "GET|PUT|LIST|MKDIR|RMDIR|DELETE|RENAME|CHMOD|", "flags": "i" }
+          "regexp": { "pattern": "^(GET|PUT|LIST|MKDIR|RMDIR|DELETE|RENAME|CHMOD)$", "flags": "i" }
         },
         "remotePath": {
           "type": "string"
@@ -55,6 +68,17 @@
         },
         "destinationPath": {
           "type": "string"
+        },
+        "recursive": {
+          "type": "boolean"
+        },
+        "mode": {
+          "type": ["string", "number"],
+          "description": "Modo para chmod (por ejemplo, 0o644 o '644')"
+        },
+        "addtionalOptions": {
+          "type": ["object", "boolean"],
+          "description": "Opciones adicionales (mantiene nombre legado)"
         }
       }
     }
